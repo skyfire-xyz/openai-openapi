@@ -1513,9 +1513,8 @@ components:
           description: |
             Allows to force the model to produce specific output format.
             Only supported by OpenAI models, Nitro models, and some others - check the
-            providers on the model page on openrouter.ai/models to see if it's supported,
-            and set `require_parameters` to true in your Provider Preferences. See
-            openrouter.ai/docs/provider-routing
+            providers on the model page on [models](https://openrouter.ai/models) to see if it's supported,
+            and set `require_parameters` to true in your Provider Preferences. See [Provider Routing](https://openrouter.ai/docs/provider-routing)
 
             **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
           properties:
@@ -1601,20 +1600,20 @@ components:
           type: array
           description: >
             OpenRouter-only parameters
-            See "Prompt Transforms" section: openrouter.ai/docs/transforms
+            See ["Prompt Transforms"](https://openrouter.ai/docs/transforms)
           items:
             type: string
 
         models:
           description: >
-            See "Model Routing" section: openrouter.ai/docs/model-routing
+            See ["Model Routing"](https://openrouter.ai/docs/model-routing)
           type: array
           items:
             type: string
 
         route:
           description: >
-            See "Model Routing" section: openrouter.ai/docs/model-routing
+            See ["Model Routing"](https://openrouter.ai/docs/model-routing)
           type: string
           nullable: true
 
