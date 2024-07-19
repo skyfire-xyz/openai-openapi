@@ -2791,7 +2791,7 @@ components:
       properties:
         model:
           description: |
-            One of the available [TTS models](https://platform.openai.com/models/tts): `tts-1` or `tts-1-hd`
+            One of the available [TTS models](https://platform.openai.com/docs/models/tts): `tts-1` or `tts-1-hd`
           anyOf:
             - type: string
             - type: string
@@ -3369,7 +3369,7 @@ components:
 
     AssistantsApiResponseFormatOption:
       description: |
-        Specifies the format that the model must output. Compatible with [GPT-4o](https://platform.openai.com/models/gpt-4o), [GPT-4 Turbo](https://platform.openai.com/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+        Specifies the format that the model must output. Compatible with [GPT-4o](https://platform.openai.com/docs/models/gpt-4o), [GPT-4 Turbo](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
         Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -4959,7 +4959,7 @@ components:
               description: The text contents of the message.
               title: Text content
             - type: array
-              description: An array of content parts with a defined type, each can be of type `text` or images can be passed with `image_url` or `image_file`. Image types are only supported on [Vision-compatible models](https://platform.openai.com/models/overview).
+              description: An array of content parts with a defined type, each can be of type `text` or images can be passed with `image_url` or `image_file`. Image types are only supported on [Vision-compatible models](https://platform.openai.com/docs/models/overview).
               title: Array of content parts
               items:
                 oneOf:
