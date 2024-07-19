@@ -35,7 +35,7 @@ paths:
         name: Create chat completion
         group: chat
         returns: |
-          Returns a [chat completion](/docs/api-reference/chat/object) object, or a streamed sequence of [chat completion chunk](/docs/api-reference/chat/streaming) objects if the request is streamed.
+          Returns a [chat completion](https://platform.openai.com/api-reference/chat/object) object, or a streamed sequence of [chat completion chunk](https://platform.openai.com/api-reference/chat/streaming) objects if the request is streamed.
         path: create
         examples:
           - title: Default
@@ -776,7 +776,7 @@ components:
           description: &completions_frequency_penalty_description |
             Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
 
-            [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)
+            [See more information about frequency and presence penalties.](https://platform.openai.com/guides/text-generation/parameter-details)
         logit_bias: &completions_logit_bias
           type: object
           x-oaiTypeLabel: map
@@ -830,7 +830,7 @@ components:
           description: &completions_presence_penalty_description |
             Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
 
-            [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)
+            [See more information about frequency and presence penalties.](https://platform.openai.com/guides/text-generation/parameter-details)
         seed: &completions_seed_param
           type: integer
           minimum: -9223372036854775808
@@ -900,7 +900,7 @@ components:
           type: string
           example: user-1234
           description: |
-            A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
+            A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://platform.openai.com/guides/safety-best-practices/end-user-ids).
       required:
         - model
         - prompt
@@ -1028,7 +1028,7 @@ components:
               format: uri
             detail:
               type: string
-              description: Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision/low-or-high-fidelity-image-understanding).
+              description: Specifies the detail level of the image. Learn more in the [Vision guide](https://platform.openai.com/guides/vision/low-or-high-fidelity-image-understanding).
               enum: ["auto", "low", "high"]
               default: "auto"
           required:
@@ -1200,7 +1200,7 @@ components:
 
     FunctionParameters:
       type: object
-      description: "The parameters the functions accepts, described as a JSON Schema object. See the [guide](/docs/guides/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format. \n\nOmitting `parameters` defines a function with an empty parameter list."
+      description: "The parameters the functions accepts, described as a JSON Schema object. See the [guide](https://platform.openai.com/guides/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format. \n\nOmitting `parameters` defines a function with an empty parameter list."
       additionalProperties: true
 
     ChatCompletionFunctions:
@@ -1296,7 +1296,7 @@ components:
         - function
 
     ParallelToolCalls:
-      description: Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+      description: Whether to enable [parallel function calling](https://platform.openai.com/guides/function-calling/parallel-function-calling) during tool use.
       type: boolean
       default: true
 
@@ -2278,7 +2278,7 @@ components:
           description: |
             The intended purpose of the uploaded file.
 
-            Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](/docs/api-reference/messages) files, "vision" for Assistants image file inputs, "batch" for [Batch API](/docs/guides/batch), and "fine-tune" for [Fine-tuning](/docs/api-reference/fine-tuning).
+            Use "assistants" for [Assistants](https://platform.openai.com/api-reference/assistants) and [Message](https://platform.openai.com/api-reference/messages) files, "vision" for Assistants image file inputs, "batch" for [Batch API](https://platform.openai.com/guides/batch), and "fine-tune" for [Fine-tuning](https://platform.openai.com/api-reference/fine-tuning).
           type: string
           enum: ["assistants", "batch", "fine-tune", "vision"]
       required:
@@ -2306,7 +2306,7 @@ components:
         model:
           description: |
             The name of the model to fine-tune. You can select one of the
-            [supported models](/docs/guides/fine-tuning/what-models-can-be-fine-tuned).
+            [supported models](https://platform.openai.com/guides/fine-tuning/what-models-can-be-fine-tuned).
           example: "gpt-3.5-turbo"
           anyOf:
             - type: string
@@ -2317,13 +2317,13 @@ components:
           description: |
             The ID of an uploaded file that contains training data.
 
-            See [upload file](/docs/api-reference/files/create) for how to upload a file.
+            See [upload file](https://platform.openai.com/api-reference/files/create) for how to upload a file.
 
             Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.
 
-            The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input) or [completions](/docs/api-reference/fine-tuning/completions-input) format.
+            The contents of the file should differ depending on if the model uses the [chat](https://platform.openai.com/api-reference/fine-tuning/chat-input) or [completions](https://platform.openai.com/api-reference/fine-tuning/completions-input) format.
 
-            See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
+            See the [fine-tuning guide](https://platform.openai.com/guides/fine-tuning) for more details.
           type: string
           example: "file-abc123"
         hyperparameters:
@@ -2384,7 +2384,7 @@ components:
 
             Your dataset must be formatted as a JSONL file. You must upload your file with the purpose `fine-tune`.
 
-            See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
+            See the [fine-tuning guide](https://platform.openai.com/guides/fine-tuning) for more details.
           type: string
           nullable: true
           example: "file-abc123"
@@ -2619,7 +2619,7 @@ components:
           type: string
         prompt:
           description: |
-            An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should match the audio language.
+            An optional text to guide the model's style or continue a previous audio segment. The [prompt](https://platform.openai.com/guides/speech-to-text/prompting) should match the audio language.
           type: string
         response_format:
           description: |
@@ -2741,7 +2741,7 @@ components:
           x-oaiTypeLabel: string
         prompt:
           description: |
-            An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should be in English.
+            An optional text to guide the model's style or continue a previous audio segment. The [prompt](https://platform.openai.com/guides/speech-to-text/prompting) should be in English.
           type: string
         response_format:
           description: |
@@ -2791,7 +2791,7 @@ components:
       properties:
         model:
           description: |
-            One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
+            One of the available [TTS models](https://platform.openai.com/models/tts): `tts-1` or `tts-1-hd`
           anyOf:
             - type: string
             - type: string
@@ -2802,7 +2802,7 @@ components:
           description: The text to generate audio for. The maximum length is 4096 characters.
           maxLength: 4096
         voice:
-          description: The voice to use when generating the audio. Supported voices are `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech/voice-options).
+          description: The voice to use when generating the audio. Supported voices are `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`. Previews of the voices are available in the [Text to speech guide](https://platform.openai.com/guides/text-to-speech/voice-options).
           type: string
           enum: ["alloy", "echo", "fable", "onyx", "nova", "shimmer"]
         response_format:
@@ -2916,7 +2916,7 @@ components:
         embedding:
           type: array
           description: |
-            The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](/docs/guides/embeddings).
+            The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](https://platform.openai.com/guides/embeddings).
           items:
             type: number
         object:
@@ -2982,7 +2982,7 @@ components:
           description: The Unix timestamp (in seconds) for when the fine-tuning job was finished. The value will be null if the fine-tuning job is still running.
         hyperparameters:
           type: object
-          description: The hyperparameters used for the fine-tuning job. See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
+          description: The hyperparameters used for the fine-tuning job. See the [fine-tuning guide](https://platform.openai.com/guides/fine-tuning) for more details.
           properties:
             n_epochs:
               oneOf:
@@ -3010,7 +3010,7 @@ components:
           description: The organization that owns the fine-tuning job.
         result_files:
           type: array
-          description: The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](/docs/api-reference/files/retrieve-contents).
+          description: The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](https://platform.openai.com/api-reference/files/retrieve-contents).
           items:
             type: string
             example: file-abc123
@@ -3032,11 +3032,11 @@ components:
           description: The total number of billable tokens processed by this fine-tuning job. The value will be null if the fine-tuning job is still running.
         training_file:
           type: string
-          description: The file ID used for training. You can retrieve the training data with the [Files API](/docs/api-reference/files/retrieve-contents).
+          description: The file ID used for training. You can retrieve the training data with the [Files API](https://platform.openai.com/api-reference/files/retrieve-contents).
         validation_file:
           type: string
           nullable: true
-          description: The file ID used for validation. You can retrieve the validation results with the [Files API](/docs/api-reference/files/retrieve-contents).
+          description: The file ID used for validation. You can retrieve the validation results with the [Files API](https://platform.openai.com/api-reference/files/retrieve-contents).
         integrations:
           type: array
           nullable: true
@@ -3369,7 +3369,7 @@ components:
 
     AssistantsApiResponseFormatOption:
       description: |
-        Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+        Specifies the format that the model must output. Compatible with [GPT-4o](https://platform.openai.com/models/gpt-4o), [GPT-4 Turbo](https://platform.openai.com/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
         Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -3453,7 +3453,7 @@ components:
                 file_ids:
                   type: array
                   description: |
-                    A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter`` tool. There can be a maximum of 20 files associated with the tool.
+                    A list of [file](https://platform.openai.com/api-reference/files) IDs made available to the `code_interpreter`` tool. There can be a maximum of 20 files associated with the tool.
                   default: []
                   maxItems: 20
                   items:
@@ -3464,7 +3464,7 @@ components:
                 vector_store_ids:
                   type: array
                   description: |
-                    The ID of the [vector store](/docs/api-reference/vector-stores/object) attached to this assistant. There can be a maximum of 1 vector store attached to the assistant.
+                    The ID of the [vector store](https://platform.openai.com/api-reference/vector-stores/object) attached to this assistant. There can be a maximum of 1 vector store attached to the assistant.
                   maxItems: 1
                   items:
                     type: string
@@ -3580,7 +3580,7 @@ components:
                 file_ids:
                   type: array
                   description: |
-                    A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
+                    A list of [file](https://platform.openai.com/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
                   default: []
                   maxItems: 20
                   items:
@@ -3591,14 +3591,14 @@ components:
                 vector_store_ids:
                   type: array
                   description: |
-                    The [vector store](/docs/api-reference/vector-stores/object) attached to this assistant. There can be a maximum of 1 vector store attached to the assistant.
+                    The [vector store](https://platform.openai.com/api-reference/vector-stores/object) attached to this assistant. There can be a maximum of 1 vector store attached to the assistant.
                   maxItems: 1
                   items:
                     type: string
                 vector_stores:
                   type: array
                   description: |
-                    A helper to create a [vector store](/docs/api-reference/vector-stores/object) with file_ids and attach it to this assistant. There can be a maximum of 1 vector store attached to the assistant.
+                    A helper to create a [vector store](https://platform.openai.com/api-reference/vector-stores/object) with file_ids and attach it to this assistant. There can be a maximum of 1 vector store attached to the assistant.
                   maxItems: 1
                   items:
                     type: object
@@ -3606,7 +3606,7 @@ components:
                       file_ids:
                         type: array
                         description: |
-                          A list of [file](/docs/api-reference/files) IDs to add to the vector store. There can be a maximum of 10000 files in a vector store.
+                          A list of [file](https://platform.openai.com/api-reference/files) IDs to add to the vector store. There can be a maximum of 10000 files in a vector store.
                         maxItems: 10000
                         items:
                           type: string
@@ -3741,7 +3741,7 @@ components:
                 file_ids:
                   type: array
                   description: |
-                    Overrides the list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
+                    Overrides the list of [file](https://platform.openai.com/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
                   default: []
                   maxItems: 20
                   items:
@@ -3752,7 +3752,7 @@ components:
                 vector_store_ids:
                   type: array
                   description: |
-                    Overrides the [vector store](/docs/api-reference/vector-stores/object) attached to this assistant. There can be a maximum of 1 vector store attached to the assistant.
+                    Overrides the [vector store](https://platform.openai.com/api-reference/vector-stores/object) attached to this assistant. There can be a maximum of 1 vector store attached to the assistant.
                   maxItems: 1
                   items:
                     type: string
@@ -3856,7 +3856,7 @@ components:
               description: |
                 The maximum number of results the file search tool should output. The default is 20 for gpt-4* models and 5 for gpt-3.5-turbo. This number should be between 1 and 50 inclusive.
 
-                Note that the file search tool may output fewer than `max_num_results` results. See the [file search tool documentation](/docs/assistants/tools/file-search/number-of-chunks-returned) for more information.
+                Note that the file search tool may output fewer than `max_num_results` results. See the [file search tool documentation](https://platform.openai.com/assistants/tools/file-search/number-of-chunks-returned) for more information.
       required:
         - type
 
@@ -3942,7 +3942,7 @@ components:
     RunObject:
       type: object
       title: A run on a thread
-      description: Represents an execution run on a [thread](/docs/api-reference/threads).
+      description: Represents an execution run on a [thread](https://platform.openai.com/api-reference/threads).
       properties:
         id:
           description: The identifier, which can be referenced in API endpoints.
@@ -3955,10 +3955,10 @@ components:
           description: The Unix timestamp (in seconds) for when the run was created.
           type: integer
         thread_id:
-          description: The ID of the [thread](/docs/api-reference/threads) that was executed on as a part of this run.
+          description: The ID of the [thread](https://platform.openai.com/api-reference/threads) that was executed on as a part of this run.
           type: string
         assistant_id:
-          description: The ID of the [assistant](/docs/api-reference/assistants) used for execution of this run.
+          description: The ID of the [assistant](https://platform.openai.com/api-reference/assistants) used for execution of this run.
           type: string
         status:
           description: The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, `incomplete`, or `expired`.
@@ -4043,13 +4043,13 @@ components:
               type: string
               enum: ["max_completion_tokens", "max_prompt_tokens"]
         model:
-          description: The model that the [assistant](/docs/api-reference/assistants) used for this run.
+          description: The model that the [assistant](https://platform.openai.com/api-reference/assistants) used for this run.
           type: string
         instructions:
-          description: The instructions that the [assistant](/docs/api-reference/assistants) used for this run.
+          description: The instructions that the [assistant](https://platform.openai.com/api-reference/assistants) used for this run.
           type: string
         tools:
-          description: The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.
+          description: The list of tools that the [assistant](https://platform.openai.com/api-reference/assistants) used for this run.
           default: []
           type: array
           maxItems: 20
@@ -4167,10 +4167,10 @@ components:
       additionalProperties: false
       properties:
         assistant_id:
-          description: The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run.
+          description: The ID of the [assistant](https://platform.openai.com/api-reference/assistants) to use to execute this run.
           type: string
         model:
-          description: The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
+          description: The ID of the [Model](https://platform.openai.com/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
           example: "gpt-4-turbo"
           anyOf:
             - type: string
@@ -4201,7 +4201,7 @@ components:
           x-oaiTypeLabel: string
           nullable: true
         instructions:
-          description: Overrides the [instructions](/docs/api-reference/assistants/createAssistant) of the assistant. This is useful for modifying the behavior on a per-run basis.
+          description: Overrides the [instructions](https://platform.openai.com/api-reference/assistants/createAssistant) of the assistant. This is useful for modifying the behavior on a per-run basis.
           type: string
           nullable: true
         additional_instructions:
@@ -4344,7 +4344,7 @@ components:
       properties:
         id:
           type: string
-          description: The ID of the tool call. This ID must be referenced when you submit the tool outputs in using the [Submit tool outputs to run](/docs/api-reference/runs/submitToolOutputs) endpoint.
+          description: The ID of the tool call. This ID must be referenced when you submit the tool outputs in using the [Submit tool outputs to run](https://platform.openai.com/api-reference/runs/submitToolOutputs) endpoint.
         type:
           type: string
           description: The type of tool call the output is required for. For now, this is always `function`.
@@ -4372,13 +4372,13 @@ components:
       additionalProperties: false
       properties:
         assistant_id:
-          description: The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run.
+          description: The ID of the [assistant](https://platform.openai.com/api-reference/assistants) to use to execute this run.
           type: string
         thread:
           $ref: "#/components/schemas/CreateThreadRequest"
           description: If no thread is provided, an empty thread will be created.
         model:
-          description: The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
+          description: The ID of the [Model](https://platform.openai.com/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
           example: "gpt-4-turbo"
           anyOf:
             - type: string
@@ -4433,7 +4433,7 @@ components:
                 file_ids:
                   type: array
                   description: |
-                    A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
+                    A list of [file](https://platform.openai.com/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
                   default: []
                   maxItems: 20
                   items:
@@ -4444,7 +4444,7 @@ components:
                 vector_store_ids:
                   type: array
                   description: |
-                    The ID of the [vector store](/docs/api-reference/vector-stores/object) attached to this assistant. There can be a maximum of 1 vector store attached to the assistant.
+                    The ID of the [vector store](https://platform.openai.com/api-reference/vector-stores/object) attached to this assistant. There can be a maximum of 1 vector store attached to the assistant.
                   maxItems: 1
                   items:
                     type: string
@@ -4505,7 +4505,7 @@ components:
     ThreadObject:
       type: object
       title: Thread
-      description: Represents a thread that contains [messages](/docs/api-reference/messages).
+      description: Represents a thread that contains [messages](https://platform.openai.com/api-reference/messages).
       properties:
         id:
           description: The identifier, which can be referenced in API endpoints.
@@ -4528,7 +4528,7 @@ components:
                 file_ids:
                   type: array
                   description: |
-                    A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
+                    A list of [file](https://platform.openai.com/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
                   default: []
                   maxItems: 20
                   items:
@@ -4539,7 +4539,7 @@ components:
                 vector_store_ids:
                   type: array
                   description: |
-                    The [vector store](/docs/api-reference/vector-stores/object) attached to this thread. There can be a maximum of 1 vector store attached to the thread.
+                    The [vector store](https://platform.openai.com/api-reference/vector-stores/object) attached to this thread. There can be a maximum of 1 vector store attached to the thread.
                   maxItems: 1
                   items:
                     type: string
@@ -4571,7 +4571,7 @@ components:
       additionalProperties: false
       properties:
         messages:
-          description: A list of [messages](/docs/api-reference/messages) to start the thread with.
+          description: A list of [messages](https://platform.openai.com/api-reference/messages) to start the thread with.
           type: array
           items:
             $ref: "#/components/schemas/CreateMessageRequest"
@@ -4586,7 +4586,7 @@ components:
                 file_ids:
                   type: array
                   description: |
-                    A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
+                    A list of [file](https://platform.openai.com/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
                   default: []
                   maxItems: 20
                   items:
@@ -4597,14 +4597,14 @@ components:
                 vector_store_ids:
                   type: array
                   description: |
-                    The [vector store](/docs/api-reference/vector-stores/object) attached to this thread. There can be a maximum of 1 vector store attached to the thread.
+                    The [vector store](https://platform.openai.com/api-reference/vector-stores/object) attached to this thread. There can be a maximum of 1 vector store attached to the thread.
                   maxItems: 1
                   items:
                     type: string
                 vector_stores:
                   type: array
                   description: |
-                    A helper to create a [vector store](/docs/api-reference/vector-stores/object) with file_ids and attach it to this thread. There can be a maximum of 1 vector store attached to the thread.
+                    A helper to create a [vector store](https://platform.openai.com/api-reference/vector-stores/object) with file_ids and attach it to this thread. There can be a maximum of 1 vector store attached to the thread.
                   maxItems: 1
                   items:
                     type: object
@@ -4612,7 +4612,7 @@ components:
                       file_ids:
                         type: array
                         description: |
-                          A list of [file](/docs/api-reference/files) IDs to add to the vector store. There can be a maximum of 10000 files in a vector store.
+                          A list of [file](https://platform.openai.com/api-reference/files) IDs to add to the vector store. There can be a maximum of 10000 files in a vector store.
                         maxItems: 10000
                         items:
                           type: string
@@ -4693,7 +4693,7 @@ components:
                 file_ids:
                   type: array
                   description: |
-                    A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
+                    A list of [file](https://platform.openai.com/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
                   default: []
                   maxItems: 20
                   items:
@@ -4704,7 +4704,7 @@ components:
                 vector_store_ids:
                   type: array
                   description: |
-                    The [vector store](/docs/api-reference/vector-stores/object) attached to this thread. There can be a maximum of 1 vector store attached to the thread.
+                    The [vector store](https://platform.openai.com/api-reference/vector-stores/object) attached to this thread. There can be a maximum of 1 vector store attached to the thread.
                   maxItems: 1
                   items:
                     type: string
@@ -4758,7 +4758,7 @@ components:
     MessageObject:
       type: object
       title: The message object
-      description: Represents a message within a [thread](/docs/api-reference/threads).
+      description: Represents a message within a [thread](https://platform.openai.com/api-reference/threads).
       properties:
         id:
           description: The identifier, which can be referenced in API endpoints.
@@ -4771,7 +4771,7 @@ components:
           description: The Unix timestamp (in seconds) for when the message was created.
           type: integer
         thread_id:
-          description: The [thread](/docs/api-reference/threads) ID that this message belongs to.
+          description: The [thread](https://platform.openai.com/api-reference/threads) ID that this message belongs to.
           type: string
         status:
           description: The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
@@ -4817,11 +4817,11 @@ components:
               - $ref: "#/components/schemas/MessageContentTextObject"
             x-oaiExpandable: true
         assistant_id:
-          description: If applicable, the ID of the [assistant](/docs/api-reference/assistants) that authored this message.
+          description: If applicable, the ID of the [assistant](https://platform.openai.com/api-reference/assistants) that authored this message.
           type: string
           nullable: true
         run_id:
-          description: The ID of the [run](/docs/api-reference/runs) associated with the creation of this message. Value is `null` when messages are created manually using the create message or create thread endpoints.
+          description: The ID of the [run](https://platform.openai.com/api-reference/runs) associated with the creation of this message. Value is `null` when messages are created manually using the create message or create thread endpoints.
           type: string
           nullable: true
         attachments:
@@ -4959,7 +4959,7 @@ components:
               description: The text contents of the message.
               title: Text content
             - type: array
-              description: An array of content parts with a defined type, each can be of type `text` or images can be passed with `image_url` or `image_file`. Image types are only supported on [Vision-compatible models](/docs/models/overview).
+              description: An array of content parts with a defined type, each can be of type `text` or images can be passed with `image_url` or `image_file`. Image types are only supported on [Vision-compatible models](https://platform.openai.com/models/overview).
               title: Array of content parts
               items:
                 oneOf:
@@ -5049,7 +5049,7 @@ components:
     MessageContentImageFileObject:
       title: Image file
       type: object
-      description: References an image [File](/docs/api-reference/files) in the content of a message.
+      description: References an image [File](https://platform.openai.com/api-reference/files) in the content of a message.
       properties:
         type:
           description: Always `image_file`.
@@ -5059,7 +5059,7 @@ components:
           type: object
           properties:
             file_id:
-              description: The [File](/docs/api-reference/files) ID of the image in the message content. Set `purpose="vision"` when uploading the File if you need to later display the file content.
+              description: The [File](https://platform.openai.com/api-reference/files) ID of the image in the message content. Set `purpose="vision"` when uploading the File if you need to later display the file content.
               type: string
             detail:
               type: string
@@ -5075,7 +5075,7 @@ components:
     MessageDeltaContentImageFileObject:
       title: Image file
       type: object
-      description: References an image [File](/docs/api-reference/files) in the content of a message.
+      description: References an image [File](https://platform.openai.com/api-reference/files) in the content of a message.
       properties:
         index:
           type: integer
@@ -5088,7 +5088,7 @@ components:
           type: object
           properties:
             file_id:
-              description: The [File](/docs/api-reference/files) ID of the image in the message content. Set `purpose="vision"` when uploading the File if you need to later display the file content.
+              description: The [File](https://platform.openai.com/api-reference/files) ID of the image in the message content. Set `purpose="vision"` when uploading the File if you need to later display the file content.
               type: string
             detail:
               type: string
@@ -5375,13 +5375,13 @@ components:
           description: The Unix timestamp (in seconds) for when the run step was created.
           type: integer
         assistant_id:
-          description: The ID of the [assistant](/docs/api-reference/assistants) associated with the run step.
+          description: The ID of the [assistant](https://platform.openai.com/api-reference/assistants) associated with the run step.
           type: string
         thread_id:
-          description: The ID of the [thread](/docs/api-reference/threads) that was run.
+          description: The ID of the [thread](https://platform.openai.com/api-reference/threads) that was run.
           type: string
         run_id:
-          description: The ID of the [run](/docs/api-reference/runs) that this run step is a part of.
+          description: The ID of the [run](https://platform.openai.com/api-reference/runs) that this run step is a part of.
           type: string
         type:
           description: The type of run step, which can be either `message_creation` or `tool_calls`.
@@ -5731,7 +5731,7 @@ components:
           type: object
           properties:
             file_id:
-              description: The [file](/docs/api-reference/files) ID of the image.
+              description: The [file](https://platform.openai.com/api-reference/files) ID of the image.
               type: string
           required:
             - file_id
@@ -5754,7 +5754,7 @@ components:
           type: object
           properties:
             file_id:
-              description: The [file](/docs/api-reference/files) ID of the image.
+              description: The [file](https://platform.openai.com/api-reference/files) ID of the image.
               type: string
       required:
         - index
@@ -5826,7 +5826,7 @@ components:
               description: The arguments passed to the function.
             output:
               type: string
-              description: The output of the function. This will be `null` if the outputs have not been [submitted](/docs/api-reference/runs/submitToolOutputs) yet.
+              description: The output of the function. This will be `null` if the outputs have not been [submitted](https://platform.openai.com/api-reference/runs/submitToolOutputs) yet.
               nullable: true
           required:
             - name
@@ -5863,7 +5863,7 @@ components:
               description: The arguments passed to the function.
             output:
               type: string
-              description: The output of the function. This will be `null` if the outputs have not been [submitted](/docs/api-reference/runs/submitToolOutputs) yet.
+              description: The output of the function. This will be `null` if the outputs have not been [submitted](https://platform.openai.com/api-reference/runs/submitToolOutputs) yet.
               nullable: true
       required:
         - index
@@ -5989,7 +5989,7 @@ components:
       additionalProperties: false
       properties:
         file_ids:
-          description: A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
+          description: A list of [File](https://platform.openai.com/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
           type: array
           maxItems: 500
           items:
@@ -6088,7 +6088,7 @@ components:
           description: The Unix timestamp (in seconds) for when the vector store file was created.
           type: integer
         vector_store_id:
-          description: The ID of the [vector store](/docs/api-reference/vector-stores/object) that the [File](/docs/api-reference/files) is attached to.
+          description: The ID of the [vector store](https://platform.openai.com/api-reference/vector-stores/object) that the [File](https://platform.openai.com/api-reference/files) is attached to.
           type: string
         status:
           description: The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
@@ -6239,7 +6239,7 @@ components:
       additionalProperties: false
       properties:
         file_id:
-          description: A [File](/docs/api-reference/files) ID that the vector store should use. Useful for tools like `file_search` that can access files.
+          description: A [File](https://platform.openai.com/api-reference/files) ID that the vector store should use. Useful for tools like `file_search` that can access files.
           type: string
         chunking_strategy:
           $ref: "#/components/schemas/ChunkingStrategyRequestParam"
@@ -6302,7 +6302,7 @@ components:
           description: The Unix timestamp (in seconds) for when the vector store files batch was created.
           type: integer
         vector_store_id:
-          description: The ID of the [vector store](/docs/api-reference/vector-stores/object) that the [File](/docs/api-reference/files) is attached to.
+          description: The ID of the [vector store](https://platform.openai.com/api-reference/vector-stores/object) that the [File](https://platform.openai.com/api-reference/files) is attached to.
           type: string
         status:
           description: The status of the vector store files batch, which can be either `in_progress`, `completed`, `cancelled` or `failed`.
@@ -6363,7 +6363,7 @@ components:
       additionalProperties: false
       properties:
         file_ids:
-          description: A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
+          description: A list of [File](https://platform.openai.com/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
           type: array
           minItems: 1
           maxItems: 500
@@ -6393,7 +6393,7 @@ components:
         `thread.message.completed` event.
 
         We may add additional events over time, so we recommend handling unknown events gracefully
-        in your code. See the [Assistants API quickstart](/docs/assistants/overview) to learn how to
+        in your code. See the [Assistants API quickstart](https://platform.openai.com/assistants/overview) to learn how to
         integrate the Assistants API with streaming.
       oneOf:
         - $ref: "#/components/schemas/ThreadStreamEvent"
@@ -6418,9 +6418,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a new [thread](/docs/api-reference/threads/object) is created.
+          description: Occurs when a new [thread](https://platform.openai.com/api-reference/threads/object) is created.
           x-oaiMeta:
-            dataDescription: "`data` is a [thread](/docs/api-reference/threads/object)"
+            dataDescription: "`data` is a [thread](https://platform.openai.com/api-reference/threads/object)"
 
     RunStreamEvent:
       oneOf:
@@ -6434,9 +6434,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a new [run](/docs/api-reference/runs/object) is created.
+          description: Occurs when a new [run](https://platform.openai.com/api-reference/runs/object) is created.
           x-oaiMeta:
-            dataDescription: "`data` is a [run](/docs/api-reference/runs/object)"
+            dataDescription: "`data` is a [run](https://platform.openai.com/api-reference/runs/object)"
         - type: object
           properties:
             event:
@@ -6447,9 +6447,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [run](/docs/api-reference/runs/object) moves to a `queued` status.
+          description: Occurs when a [run](https://platform.openai.com/api-reference/runs/object) moves to a `queued` status.
           x-oaiMeta:
-            dataDescription: "`data` is a [run](/docs/api-reference/runs/object)"
+            dataDescription: "`data` is a [run](https://platform.openai.com/api-reference/runs/object)"
         - type: object
           properties:
             event:
@@ -6460,9 +6460,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [run](/docs/api-reference/runs/object) moves to an `in_progress` status.
+          description: Occurs when a [run](https://platform.openai.com/api-reference/runs/object) moves to an `in_progress` status.
           x-oaiMeta:
-            dataDescription: "`data` is a [run](/docs/api-reference/runs/object)"
+            dataDescription: "`data` is a [run](https://platform.openai.com/api-reference/runs/object)"
         - type: object
           properties:
             event:
@@ -6473,9 +6473,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [run](/docs/api-reference/runs/object) moves to a `requires_action` status.
+          description: Occurs when a [run](https://platform.openai.com/api-reference/runs/object) moves to a `requires_action` status.
           x-oaiMeta:
-            dataDescription: "`data` is a [run](/docs/api-reference/runs/object)"
+            dataDescription: "`data` is a [run](https://platform.openai.com/api-reference/runs/object)"
         - type: object
           properties:
             event:
@@ -6486,9 +6486,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [run](/docs/api-reference/runs/object) is completed.
+          description: Occurs when a [run](https://platform.openai.com/api-reference/runs/object) is completed.
           x-oaiMeta:
-            dataDescription: "`data` is a [run](/docs/api-reference/runs/object)"
+            dataDescription: "`data` is a [run](https://platform.openai.com/api-reference/runs/object)"
         - type: object
           properties:
             event:
@@ -6499,9 +6499,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [run](/docs/api-reference/runs/object) ends with status `incomplete`.
+          description: Occurs when a [run](https://platform.openai.com/api-reference/runs/object) ends with status `incomplete`.
           x-oaiMeta:
-            dataDescription: "`data` is a [run](/docs/api-reference/runs/object)"
+            dataDescription: "`data` is a [run](https://platform.openai.com/api-reference/runs/object)"
         - type: object
           properties:
             event:
@@ -6512,9 +6512,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [run](/docs/api-reference/runs/object) fails.
+          description: Occurs when a [run](https://platform.openai.com/api-reference/runs/object) fails.
           x-oaiMeta:
-            dataDescription: "`data` is a [run](/docs/api-reference/runs/object)"
+            dataDescription: "`data` is a [run](https://platform.openai.com/api-reference/runs/object)"
         - type: object
           properties:
             event:
@@ -6525,9 +6525,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.
+          description: Occurs when a [run](https://platform.openai.com/api-reference/runs/object) moves to a `cancelling` status.
           x-oaiMeta:
-            dataDescription: "`data` is a [run](/docs/api-reference/runs/object)"
+            dataDescription: "`data` is a [run](https://platform.openai.com/api-reference/runs/object)"
         - type: object
           properties:
             event:
@@ -6538,9 +6538,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [run](/docs/api-reference/runs/object) is cancelled.
+          description: Occurs when a [run](https://platform.openai.com/api-reference/runs/object) is cancelled.
           x-oaiMeta:
-            dataDescription: "`data` is a [run](/docs/api-reference/runs/object)"
+            dataDescription: "`data` is a [run](https://platform.openai.com/api-reference/runs/object)"
         - type: object
           properties:
             event:
@@ -6551,9 +6551,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [run](/docs/api-reference/runs/object) expires.
+          description: Occurs when a [run](https://platform.openai.com/api-reference/runs/object) expires.
           x-oaiMeta:
-            dataDescription: "`data` is a [run](/docs/api-reference/runs/object)"
+            dataDescription: "`data` is a [run](https://platform.openai.com/api-reference/runs/object)"
 
     RunStepStreamEvent:
       oneOf:
@@ -6567,9 +6567,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [run step](/docs/api-reference/runs/step-object) is created.
+          description: Occurs when a [run step](https://platform.openai.com/api-reference/runs/step-object) is created.
           x-oaiMeta:
-            dataDescription: "`data` is a [run step](/docs/api-reference/runs/step-object)"
+            dataDescription: "`data` is a [run step](https://platform.openai.com/api-reference/runs/step-object)"
         - type: object
           properties:
             event:
@@ -6580,9 +6580,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [run step](/docs/api-reference/runs/step-object) moves to an `in_progress` state.
+          description: Occurs when a [run step](https://platform.openai.com/api-reference/runs/step-object) moves to an `in_progress` state.
           x-oaiMeta:
-            dataDescription: "`data` is a [run step](/docs/api-reference/runs/step-object)"
+            dataDescription: "`data` is a [run step](https://platform.openai.com/api-reference/runs/step-object)"
         - type: object
           properties:
             event:
@@ -6593,9 +6593,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when parts of a [run step](/docs/api-reference/runs/step-object) are being streamed.
+          description: Occurs when parts of a [run step](https://platform.openai.com/api-reference/runs/step-object) are being streamed.
           x-oaiMeta:
-            dataDescription: "`data` is a [run step delta](/docs/api-reference/assistants-streaming/run-step-delta-object)"
+            dataDescription: "`data` is a [run step delta](https://platform.openai.com/api-reference/assistants-streaming/run-step-delta-object)"
         - type: object
           properties:
             event:
@@ -6606,9 +6606,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [run step](/docs/api-reference/runs/step-object) is completed.
+          description: Occurs when a [run step](https://platform.openai.com/api-reference/runs/step-object) is completed.
           x-oaiMeta:
-            dataDescription: "`data` is a [run step](/docs/api-reference/runs/step-object)"
+            dataDescription: "`data` is a [run step](https://platform.openai.com/api-reference/runs/step-object)"
         - type: object
           properties:
             event:
@@ -6619,9 +6619,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [run step](/docs/api-reference/runs/step-object) fails.
+          description: Occurs when a [run step](https://platform.openai.com/api-reference/runs/step-object) fails.
           x-oaiMeta:
-            dataDescription: "`data` is a [run step](/docs/api-reference/runs/step-object)"
+            dataDescription: "`data` is a [run step](https://platform.openai.com/api-reference/runs/step-object)"
         - type: object
           properties:
             event:
@@ -6632,9 +6632,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [run step](/docs/api-reference/runs/step-object) is cancelled.
+          description: Occurs when a [run step](https://platform.openai.com/api-reference/runs/step-object) is cancelled.
           x-oaiMeta:
-            dataDescription: "`data` is a [run step](/docs/api-reference/runs/step-object)"
+            dataDescription: "`data` is a [run step](https://platform.openai.com/api-reference/runs/step-object)"
         - type: object
           properties:
             event:
@@ -6645,9 +6645,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [run step](/docs/api-reference/runs/step-object) expires.
+          description: Occurs when a [run step](https://platform.openai.com/api-reference/runs/step-object) expires.
           x-oaiMeta:
-            dataDescription: "`data` is a [run step](/docs/api-reference/runs/step-object)"
+            dataDescription: "`data` is a [run step](https://platform.openai.com/api-reference/runs/step-object)"
 
     MessageStreamEvent:
       oneOf:
@@ -6661,9 +6661,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [message](/docs/api-reference/messages/object) is created.
+          description: Occurs when a [message](https://platform.openai.com/api-reference/messages/object) is created.
           x-oaiMeta:
-            dataDescription: "`data` is a [message](/docs/api-reference/messages/object)"
+            dataDescription: "`data` is a [message](https://platform.openai.com/api-reference/messages/object)"
         - type: object
           properties:
             event:
@@ -6674,9 +6674,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.
+          description: Occurs when a [message](https://platform.openai.com/api-reference/messages/object) moves to an `in_progress` state.
           x-oaiMeta:
-            dataDescription: "`data` is a [message](/docs/api-reference/messages/object)"
+            dataDescription: "`data` is a [message](https://platform.openai.com/api-reference/messages/object)"
         - type: object
           properties:
             event:
@@ -6687,9 +6687,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.
+          description: Occurs when parts of a [Message](https://platform.openai.com/api-reference/messages/object) are being streamed.
           x-oaiMeta:
-            dataDescription: "`data` is a [message delta](/docs/api-reference/assistants-streaming/message-delta-object)"
+            dataDescription: "`data` is a [message delta](https://platform.openai.com/api-reference/assistants-streaming/message-delta-object)"
         - type: object
           properties:
             event:
@@ -6700,9 +6700,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [message](/docs/api-reference/messages/object) is completed.
+          description: Occurs when a [message](https://platform.openai.com/api-reference/messages/object) is completed.
           x-oaiMeta:
-            dataDescription: "`data` is a [message](/docs/api-reference/messages/object)"
+            dataDescription: "`data` is a [message](https://platform.openai.com/api-reference/messages/object)"
         - type: object
           properties:
             event:
@@ -6713,9 +6713,9 @@ components:
           required:
             - event
             - data
-          description: Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.
+          description: Occurs when a [message](https://platform.openai.com/api-reference/messages/object) ends before it is completed.
           x-oaiMeta:
-            dataDescription: "`data` is a [message](/docs/api-reference/messages/object)"
+            dataDescription: "`data` is a [message](https://platform.openai.com/api-reference/messages/object)"
 
     ErrorEvent:
       type: object
@@ -6728,9 +6728,9 @@ components:
       required:
         - event
         - data
-      description: Occurs when an [error](/docs/guides/error-codes/api-errors) occurs. This can happen due to an internal server error or a timeout.
+      description: Occurs when an [error](https://platform.openai.com/guides/error-codes/api-errors) occurs. This can happen due to an internal server error or a timeout.
       x-oaiMeta:
-        dataDescription: "`data` is an [error](/docs/guides/error-codes/api-errors)"
+        dataDescription: "`data` is an [error](https://platform.openai.com/guides/error-codes/api-errors)"
 
     DoneEvent:
       type: object
