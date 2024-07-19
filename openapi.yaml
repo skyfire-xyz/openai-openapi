@@ -1333,7 +1333,7 @@ components:
             properties:
                 model:
                     description: &model_description |
-                        ID of the model to use. You can use the [List models](https://platform.openai.com/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](https://platform.openai.com/models/overview) for descriptions of them.
+                        ID of the model to use. You can use the [List models](https://platform.openai.com/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](https://platform.openai.com/docs/models/overview) for descriptions of them.
                     anyOf:
                         - type: string
                         - type: string
@@ -2071,7 +2071,7 @@ components:
                     items:
                         $ref: "#/components/schemas/ChatCompletionRequestMessage"
                 model:
-                    description: ID of the model to use. See the [model endpoint compatibility](https://platform.openai.com/models/model-endpoint-compatibility) table for details on which models work with the Chat API.
+                    description: ID of the model to use. See the [model endpoint compatibility](https://platform.openai.com/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.
                     example: "gpt-4-turbo"
                     anyOf:
                         - type: string
@@ -2155,7 +2155,7 @@ components:
                 response_format:
                     type: object
                     description: |
-                        An object specifying the format that the model must output. Compatible with [GPT-4 Turbo](https://platform.openai.com/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.
+                        An object specifying the format that the model must output. Compatible with [GPT-4 Turbo](https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.
 
                         Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -3308,7 +3308,7 @@ components:
             properties:
                 model:
                     description: |
-                        One of the available [TTS models](https://platform.openai.com/models/tts): `tts-1` or `tts-1-hd`
+                        One of the available [TTS models](https://platform.openai.com/docs/models/tts): `tts-1` or `tts-1-hd`
                     anyOf:
                         - type: string
                         - type: string
@@ -3887,7 +3887,7 @@ components:
 
         AssistantsApiResponseFormatOption:
             description: |
-                Specifies the format that the model must output. Compatible with [GPT-4o](https://platform.openai.com/models/gpt-4o), [GPT-4 Turbo](https://platform.openai.com/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+                Specifies the format that the model must output. Compatible with [GPT-4o](https://platform.openai.com/docs/models/gpt-4o), [GPT-4 Turbo](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
                 Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -5478,7 +5478,7 @@ components:
                           description: The text contents of the message.
                           title: Text content
                         - type: array
-                          description: An array of content parts with a defined type, each can be of type `text` or images can be passed with `image_url` or `image_file`. Image types are only supported on [Vision-compatible models](https://platform.openai.com/models/overview).
+                          description: An array of content parts with a defined type, each can be of type `text` or images can be passed with `image_url` or `image_file`. Image types are only supported on [Vision-compatible models](https://platform.openai.com/docs/models/overview).
                           title: Array of content parts
                           items:
                               oneOf:
@@ -7673,7 +7673,7 @@ x-oaiMeta:
         - id: models
           title: Models
           description: |
-              List and describe the various models available in the API. You can refer to the [Models](https://platform.openai.com/models) documentation to understand what models are available and the differences between them.
+              List and describe the various models available in the API. You can refer to the [Models](https://platform.openai.com/docs/models) documentation to understand what models are available and the differences between them.
           navigationGroup: endpoints
           sections:
               - type: endpoint
